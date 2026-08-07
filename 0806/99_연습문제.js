@@ -16,7 +16,9 @@
 //     행복 편의점 68
 // (3) 힌트: 개념코드 폴더의 섹션01 파일(console.log 쉼표 출력), 섹션03 파일(변수 let), 섹션04 파일(상수 const)
 console.log("===== 문제 1 =====");
-// TODO: 여기에 작성
+const storeName = "행복 편의점";
+let riceBallCount = 68;
+console.log(storeName, riceBallCount);
 
 // ═══ 문제 2 ═══ 템플릿 리터럴 [기본]
 // (1) 요구사항: 아래 두 변수를 사용해 백틱(`)과 ${} 로 두 문장을 출력하세요.
@@ -29,7 +31,8 @@ console.log("===== 문제 1 =====");
 console.log("===== 문제 2 =====");
 const drinkName = "바나나 우유";
 const todayCount = 42;
-// TODO: 여기에 작성
+console.log(`${drinkName} 오늘 판매량: ${todayCount}개`);
+console.log(`내일 목표 판매량: ${todayCount + 8}개`);
 
 // ═══ 문제 3 ═══ 산술 연산자 [기본]
 // (1) 요구사항: 오전/오후 손님 수로 세 줄을 출력하세요. (템플릿 리터럴 사용)
@@ -44,7 +47,10 @@ const todayCount = 42;
 console.log("===== 문제 3 =====");
 const morning = 120;
 const afternoon = 135;
-// TODO: 여기에 작성
+const total = morning + afternoon;
+console.log(`하루 총 손님 수: ${total}명`);
+console.log(`오전 대비 오후 증가량: ${afternoon - morning}명`);
+console.log(`총 손님 수 짝수 여부: ${total % 2 === 0}`);
 
 // ═══ 문제 4 ═══ 형 변환과 typeof [응용]
 // (1) 요구사항: 재고 조사 앱이 두 매장의 컵라면 재고를 "문자열"로 보내왔습니다. 세 줄을 출력하세요.
@@ -59,7 +65,10 @@ const afternoon = 135;
 console.log("===== 문제 4 =====");
 const stockInput1 = "80";
 const stockInput2 = "50";
-// TODO: 여기에 작성
+const avgStock = (Number(stockInput1) + Number(stockInput2)) / 2;
+console.log(`잘못된 합계: ${stockInput1 + stockInput2}`);
+console.log(`자료형: ${typeof stockInput1}`);
+console.log(`두 매장 평균 재고: ${avgStock}개`);
 
 // ═══ 문제 5 ═══ 복합 대입 · 증감 연산자 [응용]
 // (1) 요구사항: 생수 재고를 단계별로 바꾸며 매 단계 재고를 출력하세요.
@@ -73,7 +82,12 @@ const stockInput2 = "50";
 // (3) 힌트: 개념코드 폴더의 섹션14 파일(복합 대입 += -= / 증감 ++)
 console.log("===== 문제 5 =====");
 let stock = 100;
-// TODO: 여기에 작성
+stock += 25;
+console.log(`입고 후 재고: ${stock}`);
+stock -= 40;
+console.log(`입고 후 재고: ${stock}`);
+stock++;
+console.log(`반품 후 재고: ${stock}`);
 
 // ═══ 문제 6 ═══ 비교 · 논리 연산자 [응용]
 // (1) 요구사항: 음료 냉장고 채우기 조건을 검사해 true/false 세 줄을 출력하세요.
@@ -89,7 +103,12 @@ console.log("===== 문제 6 =====");
 const drinkCount = 78;
 const fridgeTemp = 4.2;
 const isPowerOn = true;
-// TODO: 여기에 작성
+const isSpaceOk = drinkCount < 80;
+const isTempOk = fridgeTemp >= 3 && fridgeTemp <= 5;
+const isFullOk = isPowerOn && isSpaceOk && isTempOk;
+console.log(`공간 여유: ${isSpaceOk}`);
+console.log(`온도 적정: ${isTempOk}`);
+console.log(`채우기 가능: ${isFullOk}`);
 
 // ═══ 문제 7 ═══ [도전] 객체와 배열 접근 종합
 // (1) 요구사항: store 객체에서 값을 꺼내 세 줄을 출력하세요.
@@ -108,6 +127,9 @@ const store = {
   manager: "김철수",
   sales: [70, 74, 72],
 };
-// TODO: 여기에 작성
+console.log(`판매 기록 일수: ${store.sales.length}일`);
+console.log(`마지막 날 판매량: ${store.sales[store.sales.length - 1]}일`);
+const avgSales = (store.sales[0] + store.sales[1] + store.sales[2]) / 3;
+console.log(`${store.name} (점장 ${store.manager}) 평균 판매량: ${avgSales}개`);
 
 // 다 풀었다면 99_연습문제_정답.js 와 비교해 보세요. 수고했습니다!
